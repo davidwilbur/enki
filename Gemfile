@@ -12,6 +12,7 @@ gem 'draper'
 gem 'js-routes'
 gem 'paperclip'
 gem 'twitter-bootstrap-rails'
+gem 'omniauth-facebook'
 gem 'rails_12factor'
 
 group :development do

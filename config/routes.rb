@@ -1,12 +1,13 @@
 Treebook::Application.routes.draw do
 
+
   as :user do
     get "/sign_in", to: 'devise/sessions#new', as: :sign_in
     get "/sign_up", to: 'devise/registrations#new', as: :sign_up
     get "/logout",  to: 'devise/sessions#destroy', as: :logout
   end
 
-  devise_for :users, skip: [:sessions]
+  devise_for :users, skip: [:sessions], :controllers => { :omniauth_callbacks => "users/omniauth_callbacks"}
 
   as :user do
     get "/sign_in" => 'devise/sessions#new', as: :new_user_session
@@ -25,7 +26,8 @@ Treebook::Application.routes.draw do
   
   resources :statuses
   get 'feed', to: 'statuses#index', as: :feed
-  root to: 'statuses#index'
+  
+  root 'static_pages#home'
 
   scope ":profile_name" do
     resources :albums do
@@ -34,6 +36,8 @@ Treebook::Application.routes.draw do
   end
 
   get '/:id', to: 'profiles#show', as: 'profile'
+
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
