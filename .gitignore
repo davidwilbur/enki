@@ -9,6 +9,7 @@
 /public/system
 
 .DS_Store
+/config/initializers/devise.rb
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
