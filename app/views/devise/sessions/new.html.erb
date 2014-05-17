@@ -21,7 +21,9 @@
 		<h2> Don't have an account? Sign Up!</h2>
 		<h3>You're minutes from being able to practice another language.</h3>
 		<div>
-		<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-lg btn-primary" %>
+		<%= button_to user_omniauth_authorize_path(:facebook), class: "btn btn-facebook" do %>
+  			<i class="fa fa-facebook"></i> | Sign up with Facebook
+  			<% end %>
 	</div>
 
 	<%= render "devise/shared/links" %>
