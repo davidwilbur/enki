@@ -42,6 +42,7 @@ body {
 }
 
 .alert {
+  position: absolute;
 	margin-top: 18px;
 }
 
@@ -69,4 +70,19 @@ body {
   font-size: 25px;
   color: #fff;
   text-align: right;
+}
+
+#testimonial_text {
+  padding-bottom: 25px;
+}
+
+#testimonial_img {
+
+  max-height: 175px;
+  width: auto;
+  float: right;
+}
+
+.container h1 {
+  text-align: center;
 }
