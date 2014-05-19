@@ -35,6 +35,7 @@ Treebook::Application.routes.draw do
     end
   end
 
+  get '/get_friends', to: 'get_friends#get_friends', as: :get_friends
   get '/:id', to: 'profiles#show', as: 'profile'
 
  
