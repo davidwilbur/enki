@@ -7,22 +7,36 @@
                      Czech Proverb
               </p>
             </div>
+            
             <div class="col-md-4">
+              <!--
               <h5>Company</h5>
               <h5 class="text-muted credit">About</h5>
               <h5 class="text-muted credit">Blog</h5>
+              !-->
             </div>
             <div class="col-md-4">
+              <!--
               <h5>Support</h5>
               <h5 class="text-muted credit">Contact Us</h5>
               <h5 class="text-muted credit">FAQ</h5>
               <h5 class="text-muted credit">Legal</h5>
+              !-->
+              <div id="proverb">
+                  
+                    <%= button_to user_omniauth_authorize_path(:facebook), class: "btn btn-facebook" do %>
+                    <i class="fa fa-facebook"></i> | Sign up with Facebook
+                    <% end %>
+                 
+              </div>
             </div>
+            
+
           </div>
         </div>
         <div id="footer2">
           <div class="row">
-            <p class="text-muted credit">Copyright &copy 2014 All rights reserved</p>
+            <p class="text-muted credit">Coded by <a href="https://twitter.com/dwlbr">@dwlbr</a></p>
           </div>
         </div>
   </div>

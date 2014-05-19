@@ -4,10 +4,7 @@
 
 <div>
 <strong>Friend list:</strong>
-  <%= link_to 'Blocked', user_friendships_path(list: 'blocked') %>
-  <%= link_to 'Requested', user_friendships_path(list: 'requested') %>
   <%= link_to 'Accepted', user_friendships_path(list: 'accepted') %>
-  <%= link_to 'Pending', user_friendships_path(list: 'pending') %>
 </div>
 
 
@@ -15,7 +12,7 @@
   <% friend = friendship.friend %>
   <div id="<%= dom_id(friendship) %>" class="friend row">
     <div class="col-md-1">
-      <%= link_to image_tag(friend.avatar, class: 'thumbnail'), profile_path(friend) %>
+      <%= link_to image_tag(friend.gravatar_url), profile_path(friend) %>
     </div>
     <div class="col-md-7">
       <strong><%= friend.full_name %></strong><br />
