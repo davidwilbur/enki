@@ -108,6 +108,8 @@ class User < ActiveRecord::Base
     user.first_name = auth.info.first_name
     user.last_name = auth.info.last_name
     user.profile_name = auth.extra.raw_info.username
+    user.gender = auth.extra.raw_info.gender
+    user.location = auth.info.location
     #user.name = auth.info.name   # assuming the user model has a name
     #user.image = auth.info.image # assuming the user model has an image
   end
