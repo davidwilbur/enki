@@ -12,8 +12,14 @@
 		    <div class="item active">
 		      <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="First slide" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iOTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzc3NyI+PC9yZWN0Pjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjQ1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojN2E3YTdhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjU2cHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+Rmlyc3Qgc2xpZGU8L3RleHQ+PC9zdmc+">
 		      <div class="carousel-caption">
-		     	<%= avatar_profile_link current_user, {}, class: 'lrg' %>
-				<%= current_user.full_name %> 
+		      	<%  if @user_friendships %>
+		      		<% 
+		      	<% @users = User.order('RANDOM()').limit(5) %>
+		      	<% @users.each do |user| %>
+		     		<%= avatar_profile_link user, {}, class: '' %>
+					<%= user.full_name %> <br>
+				<% end %>
+				
 		     	<div class="centered">
 					<div class="btn-group">
 						<button type="button" class="btn btn-default btn-lg">

@@ -1,16 +1,25 @@
 <div class="container">
-  <h2>Edit My Profile</h2>
+  <legend><h2>Edit My Profile</h2></legend>
+
+  <ul class="nav nav-tabs">
+  <li class="active"><a href="#">Contact</a></li>
+  <li><a href="#">Pictures</a></li>
+  <li><a href="#">Languages</a></li>
+  <li><a href="#">About Me</a></li>
+  <li><a href="#">Change Password</a></li>
+  <li><a href="#">Account</a></li>
+</ul>
 
 
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: 'form-horizontal '}) do |f| %>
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: "form-horizontal"}) do |f| %>
   <%= devise_error_messages! %>
 
   <fieldset>
     <legend>About Me</legend>
-    <%= f.input :first_name, input_html: { class: 'input-xxlarge' } %>
-    <%= f.input :last_name, input_html: { class: 'input-xxlarge' } %>
-    <%= f.input :email, input_html: { class: 'input-xxlarge' } %>
-    <%= f.input :skype, input_html: { class: 'input-xxlarge' } %>
+    <%= f.input :first_name, input_html: { class: 'input-sm' } %>
+    <%= f.input :last_name, input_html: { class: 'input-sm' } %>
+    <%= f.input :email, input_html: { class: 'input-sm' } %>
+    <%= f.input :skype, input_html: { class: 'input-sm' } %>
   </fieldset>
   <br/>
 
@@ -18,6 +27,57 @@
     <legend>Profile Picture</legend>
     <%= f.input :avatar, as: :file %>
     <%= bootstrap_paperclip_picture f, :avatar %>
+  </fieldset>
+  <br>
+
+  <fieldset>
+    <legend>Languages</legend>
+    <div class="container">
+ 
+    <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Language <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">English</a></li>
+          <li><a href="#">Spanish</a></li>
+          <li><a href="#">Chinese</a></li>
+        </ul>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Ability <span class="caret"></span></button>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#">Beginner</a></li>
+          <li><a href="#">Elementary</a></li>
+          <li><a href="#">Intermediate</a></li>
+          <li><a href="#">Advanced</a></li>
+          <li><a href="#">Fluent</a></li>
+          <li><a href="#">Native</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+      
+    </div><!-- /input-group -->
+    <br>
+     <div class="input-group">
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Language <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">English</a></li>
+          <li><a href="#">Spanish</a></li>
+          <li><a href="#">Chinese</a></li>
+        </ul>
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Select Ability <span class="caret"></span></button>
+        <ul class="dropdown-menu pull-right">
+          <li><a href="#">Beginner</a></li>
+          <li><a href="#">Elementary</a></li>
+          <li><a href="#">Intermediate</a></li>
+          <li><a href="#">Advanced</a></li>
+          <li><a href="#">Fluent</a></li>
+          <li><a href="#">Native</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+      
+    </div>
+  </div>
+
+
   </fieldset>
   
   <br/>

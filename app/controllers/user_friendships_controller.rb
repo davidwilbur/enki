@@ -5,14 +5,13 @@ class UserFriendshipsController < ApplicationController
 
 	#freestyling here
 	def show
-		@user_friendships = UserFriendshipDecorator.decorate_collection(friendship_association)
+		@user_friendships = current_user.pending_user_friendships
 		respond_with @user_friendships
+		
 	end
 
-
-
 	def index
-		@user_friendships = UserFriendshipDecorator.decorate_collection(friendship_association.all)
+		@user_friendships = UserFriendshipDecorator.decorate_collection(current_user.requested_user_friendships)
 		respond_with @user_friendships
 	end
 
