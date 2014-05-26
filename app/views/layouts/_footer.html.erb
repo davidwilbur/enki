@@ -23,9 +23,12 @@
               <h5 class="text-muted credit">Legal</h5>
               !-->
               <div id="proverb">
-                  
-                    <%= button_to user_omniauth_authorize_path(:facebook), class: "btn btn-facebook" do %>
-                    <i class="fa fa-facebook"></i> | Sign up with Facebook
+                    <% if signed_in? %>
+                    
+                    <% else %>
+                      <%= button_to user_omniauth_authorize_path(:facebook), class: "btn btn-facebook" do %>
+                      <i class="fa fa-facebook"></i> | Sign up with Facebook
+                    <% end %>
                     <% end %>
                  
               </div>
