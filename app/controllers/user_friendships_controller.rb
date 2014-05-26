@@ -11,7 +11,7 @@ class UserFriendshipsController < ApplicationController
 	end
 
 	def index
-		@user_friendships = UserFriendshipDecorator.decorate_collection(current_user.requested_user_friendships)
+		@user_friendships = UserFriendshipDecorator.decorate_collection(current_user.accepted_user_friendships)
 		respond_with @user_friendships
 	end
 
