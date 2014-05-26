@@ -1,5 +1,7 @@
 <div class="container">
-  <legend><h2>Edit My Profile</h2></legend>
+  <legend>
+    <h2>Edit My Profile</h2>
+  </legend>
 
   <div class="tabbable">
     <ul class="nav nav-tabs">
@@ -106,7 +108,7 @@
   <div class="form-actions well">
     <%= f.submit "Update", class: 'btn btn-primary' %>
     <%= link_to "Back", root_path, class: 'btn btn-default' %>
-    
+    <%= link_to "View My Profile", profile_path(current_user), class: 'btn btn-default pull-right' %>
   </div>
 <% end %>
 <br/>
