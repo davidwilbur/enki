@@ -47,6 +47,7 @@ class User < ActiveRecord::Base
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :bio, :length => { :maximum => 200 }
   validates :profile_name, presence: true, uniqueness: true,
   				format: {
   					with: /\A[a-zA-Z0-9_-]+\z/,
