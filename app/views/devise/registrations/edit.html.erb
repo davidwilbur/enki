@@ -18,7 +18,7 @@
   <%= devise_error_messages! %>
 <div class="tab-content">
   <br>
-  <div class="tab-pane active" id="tab1">
+  <div class="tab-pane fade in active" id="tab1">
     <fieldset>
       <legend>About Me</legend>
       <%= f.input :first_name, input_html: { class: 'input-sm' } %>
@@ -27,14 +27,14 @@
       <%= f.input :skype, input_html: { class: 'input-sm' } %>
     </fieldset>
   </div>
-  <div class="tab-pane" id="tab2">
+  <div class="tab-pane fade" id="tab2">
     <fieldset>
       <legend>Profile Picture</legend>
       <%= f.input :avatar, as: :file %>
       <%= bootstrap_paperclip_picture f, :avatar %>
     </fieldset>
   </div>
-  <div class="tab-pane" id="tab3">
+  <div class="tab-pane fade" id="tab3">
     <fieldset>
       <legend>Languages</legend>
    
@@ -84,20 +84,20 @@
     </div>
      </fieldset>
   </div>
-  <div class="tab-pane" id="tab4">
+  <div class="tab-pane fade" id="tab4">
     <fieldset>
       <legend>Update Bio</legend>
         <%= f.input :bio, input_html: { class: 'input-sm', rows: 5} %>
     </fieldset>
   </div>
-  <div class="tab-pane" id="tab5">
+  <div class="tab-pane fade" id="tab5">
     <fieldset>
       <legend>Update Password</legend>
       <%= f.input :password, hint: "Leave blank if you don't want to change it", input_html: { class: 'input-xxlarge', autocomplete: 'off' } %>
       <%= f.input :password_confirmation, input_html: { class: 'input-xxlarge', autocomplete: 'off' } %>
     </fieldset>
   </div>
-  <div class="tab-pane" id="tab6">
+  <div class="tab-pane fade" id="tab6">
     <fieldset>
       <legend>Account Settings</legend>
       <div class="form-actions well">
