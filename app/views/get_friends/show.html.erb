@@ -1,0 +1,59 @@
+
+
+	<%= page_header do %>
+		<h1> 
+			<%= avatar_profile_link @user, {}, class: '' %>
+			<%= @user.full_name %> 
+		</h1>
+	<% end %>
+<div class="container">
+	<%= link_to "Albums", albums_path(@user), class: 'btn btn-default' %>
+
+
+	<% if signed_in? %>
+		<span id="friend-status">
+			<% if current_user.friends.include?(@user) || current_user.pending_friends.include?(@user) %>
+				<%= link_to "Edit Friendship", edit_user_friendship_path(friend_id: @user), class: 'btn btn-default' %>
+			<% else %>
+				<%= link_to "Add Friend", new_user_friendship_path(friend_id: @user), class: 'btn btn-default', id: 'add-friendship', data: { friend_id: @user.to_param } %>
+			<% end %>
+		</span>
+	<% end %>
+
+	<div>
+		<div id="genSkypeCall">
+			<script type="text/javascript">
+				Skype.ui({
+					name: "call",
+					element: "genSkypeCall",
+					participants: ["echo123"],
+					imageSize: 16,
+					listParticipants: "false"
+				});
+			</script>
+		</div>
+	</div>
+	<div class="container">
+		<div class="centered">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default btn-lg">
+					<span class="glyphicon glyphicon-remove"></span>
+				</button>
+				<button type="button" class="btn btn-default btn-lg">
+					<span class="glyphicon glyphicon-user"></span>
+				</button>
+
+				<button type="button" class="btn btn-default btn-lg">
+					<span class="glyphicon glyphicon-ok"></span>
+				</button>
+				
+			</div>
+		</div>
+	</div>
+	<div class="well">
+		<h4>
+			<%= @user.location %><br><br>
+			<%= @user.bio %>
+		</h4>
+	</div>
+</div>

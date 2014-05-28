@@ -11,7 +11,7 @@ class UserFriendshipsController < ApplicationController
 	end
 
 	def index
-		@user_friendships = UserFriendshipDecorator.decorate_collection(current_user.accepted_user_friendships)
+		@user_friendships = UserFriendshipDecorator.decorate_collection(friendship_association.all)
 		respond_with @user_friendships
 	end
 
@@ -40,6 +40,8 @@ class UserFriendshipsController < ApplicationController
 			@friend = User.where(profile_name: params[:friend_id]).first
 			raise ActiveRecord::RecordNotFound if @friend.nil?
 			@user_friendship = current_user.user_friendships.new(friend: @friend)
+			#freestyling
+			@user_friendship = UserFriendship.request(current_user, @friend)
 		else
 			flash[:error] = "Friend required"
 		end

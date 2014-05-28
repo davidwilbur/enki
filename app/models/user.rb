@@ -92,6 +92,25 @@ class User < ActiveRecord::Base
     blocked_friends.include?(other_user)
   end
 
+  def self.get_random(current_user)
+    current_requests = User.joins("INNER JOIN users
+      ON users.id = user_friendships.user_id").where("user_friendships.state = 'requested'
+      AND user_friendships.user_id = ?", current_user.id)
+
+    current_requests
+
+    #@user_filter = current_user.user_filter
+    #current_user_pid = current_user.profile.id
+
+    #already_rated = current_user.sent_ratings.pluck(:ratee_id)
+    #@random_unmatched = Profile.where("profiles.user_id NOT IN (?)", [-1].concat(already_rated))
+     #                           .apply_filters(@user_filter, current_user)
+     #                           .sample
+
+    #@random_unmatched
+
+  end
+
   def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]

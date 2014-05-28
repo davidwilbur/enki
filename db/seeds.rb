@@ -53,11 +53,62 @@ User.create({
   password_confirmation: DEFAULT_INSECURE_PASSWORD
 })
 
+User.create({
+  first_name: "Danny",
+  last_name: "Wilbur",
+  profile_name: "danny",
+  email: "danny@littleflower.com",
+  password: DEFAULT_INSECURE_PASSWORD,
+  password_confirmation: DEFAULT_INSECURE_PASSWORD
+})
+
+User.create({
+  first_name: "Teddy",
+  last_name: "Friedman",
+  profile_name: "Ted",
+  email: "teddy@kaboom.com",
+  password: DEFAULT_INSECURE_PASSWORD,
+  password_confirmation: DEFAULT_INSECURE_PASSWORD
+})
+
+User.create({
+  first_name: "Gavin",
+  last_name: "Payne",
+  profile_name: "Gav",
+  email: "paynetrain@hbs.edu",
+  password: DEFAULT_INSECURE_PASSWORD,
+  password_confirmation: DEFAULT_INSECURE_PASSWORD
+})
+
+User.create({
+  first_name: "Tom",
+  last_name: "Wilbur",
+  profile_name: "Tom",
+  email: "twilbur@akridge.com",
+  password: DEFAULT_INSECURE_PASSWORD,
+  password_confirmation: DEFAULT_INSECURE_PASSWORD
+})
+
+User.create({
+  first_name: "Clarissa",
+  last_name: "Wilbur",
+  profile_name: "Crissi",
+  email: "cwilbur@princeton.edu",
+  password: DEFAULT_INSECURE_PASSWORD,
+  password_confirmation: DEFAULT_INSECURE_PASSWORD
+})
+
+
 jason = User.find_by_email('jason@teamtreehouse.com')
 jim   = User.find_by_email('jim@teamtreehouse.com')
 nick  = User.find_by_email('nick@teamtreehouse.com')
 mike  = User.find_by_email('mike@teamtreehouse.com')
 ryan  = User.find_by_email('ryan@teamtreehouse.com')
+danny = User.find_by_email('danny@littleflower.com')
+teddy = User.find_by_email('teddy@kaboom.com')
+gavin = User.find_by_email('paynetrain@hbs.edu')
+tom   = User.find_by_email('twilbur@akridge.com')
+clarissa = User.find_by_email('cwilbur@princeton.edu')
 
 seed_user = jason
 
@@ -70,4 +121,10 @@ ryan.statuses.create(content: "Treebook is awesome!")
 UserFriendship.request(seed_user, jim).accept!
 UserFriendship.request(seed_user, nick).block!
 UserFriendship.request(seed_user, mike)
+UserFriendship.request(ryan, seed_user)
+UserFriendship.request(seed_user, danny).accept!
+UserFriendship.request(seed_user, teddy).block!
+UserFriendship.request(seed_user, gavin)
+UserFriendship.request(seed_user, tom)
+UserFriendship.request(seed_user, clarissa)
 UserFriendship.request(ryan, seed_user)
